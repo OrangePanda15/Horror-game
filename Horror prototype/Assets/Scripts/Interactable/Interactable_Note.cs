@@ -5,15 +5,17 @@ using UnityEngine.UI;
 
 public class Interactable_Note : MonoBehaviour, IInteractable
 {
-    // Exposed variables
+    [Header("Variables")]
     [TextArea] public string noteText;
+    [Header("Asset References")]
+    public AudioClip[] audioClipsActivate;
+    public AudioClip[] audioClipsDeactivate;
 
-    // Component references
+    [Header("Component References")]
     public TextMesh text3d;
     public GameObject canvas;
     public Text textUI;
-
-    // Internal variables
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -24,14 +26,19 @@ public class Interactable_Note : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        Debug.Log(noteText);
+        Logger.Log(this, noteText);
         canvas.SetActive(true);
         Game_Manager.gameMode = Game_Manager.GameMode.ui;
+        audioSource.clip = Orange_Lib.GetRandomItemInArray(audioClipsActivate);
+        audioSource.Play();
     }
 
     public void Close()
     {
+        Logger.Log(this, "Note closed");
         canvas.SetActive(false);
         Game_Manager.gameMode = Game_Manager.GameMode.normal;
+        audioSource.clip = Orange_Lib.GetRandomItemInArray(audioClipsDeactivate);
+        audioSource.Play();
     }
 }

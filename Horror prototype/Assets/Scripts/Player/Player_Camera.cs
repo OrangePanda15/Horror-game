@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Player_Camera : MonoBehaviour
 {
-    // Exposed variables
+    [Header("Variables")]
     public float sensitivity;
     [Range(0.0f, 90.0f)] public float verticalRotationClamp = 85.0f;
 
-    // Component references
+    [Header("Component References")]
     public Transform neck;
     public Camera cam;
 
@@ -22,7 +22,7 @@ public class Player_Camera : MonoBehaviour
         {
             inputRotation = new Vector2(Input.GetAxisRaw("Mouse X"), -Input.GetAxisRaw("Mouse Y"));
 
-            totalRotation += sensitivity * new Vector2(Input.GetAxisRaw("Mouse X"), -Input.GetAxisRaw("Mouse Y"));
+            totalRotation += sensitivity * inputRotation;
             totalRotation.y = Mathf.Clamp(totalRotation.y, -verticalRotationClamp, verticalRotationClamp);
 
             neck.eulerAngles = new Vector3(

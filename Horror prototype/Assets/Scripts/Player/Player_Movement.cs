@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
-    // Exposed variables
+    [Header("Variables")]
     public float speedWalk;
     public float speedRun;
 
-    // Component references
+    [Header("Component References")]
     public Rigidbody rb;
     public Transform neck;
 
@@ -19,7 +19,7 @@ public class Player_Movement : MonoBehaviour
 
     void Update()
     {
-        inputMovement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        inputMovement = Input_Manager.Movement();
     }
 
     private void FixedUpdate()
@@ -29,6 +29,7 @@ public class Player_Movement : MonoBehaviour
             momentum = neck.transform.forward * inputMovement.y + neck.transform.right * inputMovement.x;
             momentum *= inputRun ? speedRun : speedWalk;
             rb.MovePosition(rb.position + momentum * Time.deltaTime);
+            rb.velocity = Vector3.zero;
         }
     }
 }

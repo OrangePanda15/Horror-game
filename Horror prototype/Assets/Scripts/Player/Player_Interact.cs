@@ -10,7 +10,7 @@ public class Player_Interact : MonoBehaviour
 
     private void Update()
     {
-        if (canInteract && Input.GetAxisRaw("Interact") > 0.0f)
+        if (canInteract && Input_Manager.Interact())
         {
             currentInteractable.Interact();
         }
