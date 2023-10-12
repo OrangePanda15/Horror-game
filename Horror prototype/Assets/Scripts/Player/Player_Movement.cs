@@ -24,8 +24,11 @@ public class Player_Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        momentum = neck.transform.forward * inputMovement.y + neck.transform.right * inputMovement.x;
-        momentum *= inputRun ? speedRun : speedWalk;
-        rb.MovePosition(rb.position + momentum * Time.deltaTime);
+        if (Game_Manager.gameMode == Game_Manager.GameMode.normal)
+        {
+            momentum = neck.transform.forward * inputMovement.y + neck.transform.right * inputMovement.x;
+            momentum *= inputRun ? speedRun : speedWalk;
+            rb.MovePosition(rb.position + momentum * Time.deltaTime);
+        }
     }
 }

@@ -18,19 +18,22 @@ public class Player_Camera : MonoBehaviour
 
     void Update()
     {
-        inputRotation = new Vector2(Input.GetAxisRaw("Mouse X"), -Input.GetAxisRaw("Mouse Y"));
+        if (Game_Manager.gameMode == Game_Manager.GameMode.normal)
+        {
+            inputRotation = new Vector2(Input.GetAxisRaw("Mouse X"), -Input.GetAxisRaw("Mouse Y"));
 
-        totalRotation += sensitivity * new Vector2(Input.GetAxisRaw("Mouse X"), -Input.GetAxisRaw("Mouse Y"));
-        totalRotation.y = Mathf.Clamp(totalRotation.y, -verticalRotationClamp, verticalRotationClamp);
+            totalRotation += sensitivity * new Vector2(Input.GetAxisRaw("Mouse X"), -Input.GetAxisRaw("Mouse Y"));
+            totalRotation.y = Mathf.Clamp(totalRotation.y, -verticalRotationClamp, verticalRotationClamp);
 
-        neck.eulerAngles = new Vector3(
-            0.0f,
-            totalRotation.x,
-            0.0f);
+            neck.eulerAngles = new Vector3(
+                0.0f,
+                totalRotation.x,
+                0.0f);
 
-        cam.transform.localEulerAngles = new Vector3(
-            totalRotation.y,
-            0.0f,
-            0.0f);
+            cam.transform.localEulerAngles = new Vector3(
+                totalRotation.y,
+                0.0f,
+                0.0f);
+        }
     }
 }

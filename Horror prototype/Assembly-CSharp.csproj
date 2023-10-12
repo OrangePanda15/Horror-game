@@ -57,10 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player\Player_Camera.cs" />
-    <Compile Include="Assets\Scripts\Player\Player_Movement.cs" />
     <Compile Include="Assets\Scripts\Interactable\Interactable.cs" />
     <Compile Include="Assets\Scripts\Player\Player_Interact.cs" />
     <Compile Include="Assets\Scripts\Interactable\Interactable_Note.cs" />
+    <Compile Include="Assets\Scripts\Player\Player_Movement.cs" />
+    <Compile Include="Assets\Scripts\Interactable\Interactable_Null.cs" />
+    <Compile Include="Assets\Scripts\Game_Manager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -4,20 +4,29 @@ using UnityEngine;
 
 public class Player_Interact : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // Internal variables
+    IInteractable currentInteractable;
+    bool canInteract;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (canInteract && Input.GetAxisRaw("Interact") > 0.0f)
+        {
+            currentInteractable.Interact();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(other.GetComponent<Interactable>());
+        currentInteractable = other.GetComponentInParent<IInteractable>();
+        canInteract = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (currentInteractable == other.GetComponentInParent<IInteractable>())
+        {
+            canInteract = false;
+        }
     }
 }
