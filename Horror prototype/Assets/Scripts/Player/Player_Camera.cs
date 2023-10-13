@@ -16,11 +16,16 @@ public class Player_Camera : MonoBehaviour
     Vector2 inputRotation;
     Vector2 totalRotation = Vector2.zero;
 
+    private void OnEnable()
+    {
+        sensitivity = PlayerPrefs.GetFloat(Input_Manager.keys.Input_Mouse_Sensitivity.ToString());
+    }
+
     void Update()
     {
         if (Game_Manager.gameMode == Game_Manager.GameMode.normal)
         {
-            inputRotation = new Vector2(Input.GetAxisRaw("Mouse X"), -Input.GetAxisRaw("Mouse Y"));
+            inputRotation = Input_Manager.MouseDelta();
 
             totalRotation += sensitivity * inputRotation;
             totalRotation.y = Mathf.Clamp(totalRotation.y, -verticalRotationClamp, verticalRotationClamp);

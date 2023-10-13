@@ -60,17 +60,18 @@
     <Compile Include="Assets\Scripts\Interactable\Interactable.cs" />
     <Compile Include="Assets\Scripts\Managers\Input_Manager.cs" />
     <Compile Include="Assets\Scripts\Managers\Game_Manager.cs" />
+    <Compile Include="Assets\Scripts\Menus\Settings\Settings_Keybind.cs" />
     <Compile Include="Assets\Scripts\Orange_Lib.cs" />
     <Compile Include="Assets\Scripts\Player\Player_Interact.cs" />
     <Compile Include="Assets\Scripts\Interactable\Interactable_Null.cs" />
     <Compile Include="Assets\Scripts\Interactable\Interactable_Note.cs" />
-    <Compile Include="Assets\Scripts\Menus\Menu_Settings.cs" />
+    <Compile Include="Assets\Scripts\Menus\Settings\Menu_Settings.cs" />
     <Compile Include="Assets\Scripts\Managers\Scene_Manager.cs" />
     <Compile Include="Assets\Scripts\Interactable\Interactable_Toggleable.cs" />
     <Compile Include="Assets\Scripts\Managers\Debug_Logger.cs" />
     <Compile Include="Assets\Scripts\Player\Player_Movement.cs" />
     <Compile Include="Assets\Scripts\Menus\Menu_Main.cs" />
-    <Compile Include="Assets\Scripts\Menus\UI_Keybind.cs" />
+    <Compile Include="Assets\Scripts\Menus\Settings\Settings_Mouse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Credits.txt" />

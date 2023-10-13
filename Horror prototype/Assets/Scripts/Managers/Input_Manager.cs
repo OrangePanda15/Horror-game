@@ -6,28 +6,38 @@ using UnityEngine.UI;
 
 public class Input_Manager : MonoBehaviour
 {
-    [Header("Exposed Variables")]
-    public Text buttonTextInteract;
-    public Text buttonTextMovementUp;
-    public Text buttonTextMovementDown;
-    public Text buttonTextMovementLeft;
-    public Text buttonTextMovementRight;
+    public enum keys
+    {
+        Input_Interact,
+        Input_Movement_Up,
+        Input_Movement_Down,
+        Input_Movement_Left,
+        Input_Movement_Right,
+        Input_Mouse_Sensitivity
+    }
 
     public static bool Interact()
     {
-        return GetInputDown("Input_Interact") > 0;
+        return GetInputDown(keys.Input_Interact) > 0;
     }
 
     public static Vector2 Movement()
     {
         return new Vector2(
-            Convert.ToInt32(GetInput("Input_Movement_Right")) - Convert.ToInt32(GetInput("Input_Movement_Left")),
-            Convert.ToInt32(GetInput("Input_Movement_Up")) - Convert.ToInt32(GetInput("Input_Movement_Down")));
+            Convert.ToInt32(GetInput(keys.Input_Movement_Right)) - Convert.ToInt32(GetInput(keys.Input_Movement_Left)),
+            Convert.ToInt32(GetInput(keys.Input_Movement_Up)) - Convert.ToInt32(GetInput(keys.Input_Movement_Down)));
     }
 
-    public static float GetInput(string _key)
+    public static Vector2 MouseDelta()
     {
-        int key = PlayerPrefs.GetInt(_key);
+        return new Vector2(Input.GetAxisRaw("Mouse X"), -Input.GetAxisRaw("Mouse Y"));
+    }
+
+
+
+    public static float GetInput(keys _key)
+    {
+        int key = PlayerPrefs.GetInt(_key.ToString());
         switch (key)
         {
             case 0:
@@ -682,9 +692,9 @@ public class Input_Manager : MonoBehaviour
         return 0.0f;
     }
 
-    public static float GetInputDown(string _key)
+    public static float GetInputDown(keys _key)
     {
-        int key = PlayerPrefs.GetInt(_key);
+        int key = PlayerPrefs.GetInt(_key.ToString());
         switch (key)
         {
             case 0:
@@ -1339,9 +1349,9 @@ public class Input_Manager : MonoBehaviour
         return 0.0f;
     }
 
-    public static void SetInput(UI_Keybind keybind)
+    public static void SetInput(Settings_Keybind keybind)
     {
-        string _key = keybind.key;
+        string _key = keybind.key.ToString();
 
         if (Input.anyKey)
         {
@@ -2929,5 +2939,33 @@ public class Input_Manager : MonoBehaviour
 
         string bindName = ((KeyCode)PlayerPrefs.GetInt(_key)).ToString();
         keybind.buttonText.text = bindName;
+    }
+
+    public static void SetSensitivity(Settings_Mouse mouse)
+    {
+        float currentSensitivity = PlayerPrefs.GetFloat(mouse.key.ToString());
+        float newSensitivity = 0.0f;
+
+        if (mouse.slider.value != 0.0f && mouse.field.text != "")
+        {
+            if (mouse.slider.value == currentSensitivity)
+            {
+                newSensitivity = Mathf.Clamp(
+                    float.Parse(mouse.field.text),
+                    mouse.slider.minValue,
+                    mouse.slider.maxValue);
+
+                mouse.slider.value = newSensitivity;
+                mouse.field.text = newSensitivity.ToString();
+            }
+            else
+            {
+                newSensitivity = mouse.slider.value;
+
+                mouse.field.text = newSensitivity.ToString();
+            }
+
+            PlayerPrefs.SetFloat(mouse.key.ToString(), newSensitivity);
+        }
     }
 }
