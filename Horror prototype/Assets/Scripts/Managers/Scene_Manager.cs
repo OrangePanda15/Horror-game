@@ -39,6 +39,18 @@ public class Scene_Manager : MonoBehaviour
             yield return null;
         }
 
+        InitializeScene();
+
         loadingScreen.SetActive(false);
+    }
+
+    public void InitializeScene()
+    {
+        // Add sfx level controls here
+        AudioSource[] audioSources = (AudioSource[])FindObjectsOfType(typeof(AudioSource));
+        foreach (AudioSource source in audioSources)
+        {
+            source.volume = PlayerPrefs.GetFloat(source.tag);
+        }
     }
 }

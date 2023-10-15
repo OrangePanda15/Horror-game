@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Single
+  - Undefined
+  - Audio_SFX
+  - Audio_Music
+  - Audio_UI
   layers:
   - Default
   - TransparentFX

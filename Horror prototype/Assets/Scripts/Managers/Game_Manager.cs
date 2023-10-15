@@ -13,4 +13,11 @@ public static class Game_Manager
         normal,
         ui
     }
+
+    public enum AudioKeys
+    {
+        Audio_Music,
+        Audio_UI,
+        Audio_SFX
+    }
 }

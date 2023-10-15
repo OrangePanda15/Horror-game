@@ -13,7 +13,8 @@ public class Input_Manager : MonoBehaviour
         Input_Movement_Down,
         Input_Movement_Left,
         Input_Movement_Right,
-        Input_Mouse_Sensitivity
+        Input_Mouse_Sensitivity,
+        Input_Pause
     }
 
     public static bool Interact()
@@ -31,6 +32,11 @@ public class Input_Manager : MonoBehaviour
     public static Vector2 MouseDelta()
     {
         return new Vector2(Input.GetAxisRaw("Mouse X"), -Input.GetAxisRaw("Mouse Y"));
+    }
+
+    public static bool Pause()
+    {
+        return GetInputDown(keys.Input_Pause) > 0;
     }
 
 
@@ -2939,33 +2945,5 @@ public class Input_Manager : MonoBehaviour
 
         string bindName = ((KeyCode)PlayerPrefs.GetInt(_key)).ToString();
         keybind.buttonText.text = bindName;
-    }
-
-    public static void SetSensitivity(Settings_Mouse mouse)
-    {
-        float currentSensitivity = PlayerPrefs.GetFloat(mouse.key.ToString());
-        float newSensitivity = 0.0f;
-
-        if (mouse.slider.value != 0.0f && mouse.field.text != "")
-        {
-            if (mouse.slider.value == currentSensitivity)
-            {
-                newSensitivity = Mathf.Clamp(
-                    float.Parse(mouse.field.text),
-                    mouse.slider.minValue,
-                    mouse.slider.maxValue);
-
-                mouse.slider.value = newSensitivity;
-                mouse.field.text = newSensitivity.ToString();
-            }
-            else
-            {
-                newSensitivity = mouse.slider.value;
-
-                mouse.field.text = newSensitivity.ToString();
-            }
-
-            PlayerPrefs.SetFloat(mouse.key.ToString(), newSensitivity);
-        }
     }
 }

@@ -40,4 +40,15 @@ public class Orange_Lib
     {
         return arr[Mathf.FloorToInt(UnityEngine.Random.Range(0.0f, arr.Length))];
     }
+
+    public static string ArrayToString<T>(T[] arr)
+    {
+        string output = "";
+        foreach (T item in arr)
+        {
+            output += ", " + item.ToString();
+        }
+
+        return output;
+    }
 }

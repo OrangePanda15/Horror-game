@@ -10,7 +10,9 @@ public static class Logger
             { "Interactable_Toggleable", true },
             { "Scene_Manager", true },
             { "Player_Interact", false },
-            { "Input_Manager", true }
+            { "Input_Manager", true },
+            { "Precise_Slider", false },
+            { "Menu_Pause", false },
         };
 
     public static void Log<T>(T source, string str)
