@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4799936948128516420, guid: e3acb5dc0d0a8114888fb71f4a8d45d5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.0500002
+      value: -1.0000002
       objectReference: {fileID: 0}
     - target: {fileID: 4799936948128516420, guid: e3acb5dc0d0a8114888fb71f4a8d45d5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -230,7 +230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4799936948128516420, guid: e3acb5dc0d0a8114888fb71f4a8d45d5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.44999987
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 4799936948128516420, guid: e3acb5dc0d0a8114888fb71f4a8d45d5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -328,7 +328,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -379,6 +379,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543450652549034773}
     m_Modifications:
+    - target: {fileID: 4799936947896427739, guid: e3acb5dc0d0a8114888fb71f4a8d45d5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799936948021666241, guid: e3acb5dc0d0a8114888fb71f4a8d45d5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799936948065613050, guid: e3acb5dc0d0a8114888fb71f4a8d45d5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4799936948128516420, guid: e3acb5dc0d0a8114888fb71f4a8d45d5, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -427,6 +439,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door (0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4799936948280218752, guid: e3acb5dc0d0a8114888fb71f4a8d45d5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799936949147054622, guid: e3acb5dc0d0a8114888fb71f4a8d45d5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3acb5dc0d0a8114888fb71f4a8d45d5, type: 3}
 --- !u!4 &1414669744 stripped
@@ -441,6 +461,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 426639428529324812, guid: f1a42ba5ff188544f8d1f63730d3b886, type: 3}
+      propertyPath: interactDistance
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4026998902508930426, guid: f1a42ba5ff188544f8d1f63730d3b886, type: 3}
       propertyPath: m_Name
       value: Player
@@ -735,6 +759,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 42d737303d15d8d418d8281d4df8e5c5, type: 2}
+  - {fileID: 2100000, guid: 42d737303d15d8d418d8281d4df8e5c5, type: 2}
+  - {fileID: 2100000, guid: 42d737303d15d8d418d8281d4df8e5c5, type: 2}
   - {fileID: 2100000, guid: 42d737303d15d8d418d8281d4df8e5c5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0

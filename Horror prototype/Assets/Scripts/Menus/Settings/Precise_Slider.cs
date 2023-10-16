@@ -10,6 +10,7 @@ public class Precise_Slider : MonoBehaviour
     public string text;
     public float minValue;
     public float maxValue;
+    public PreciseSliderType sliderType;
 
     [Header("Component References")]
     public Slider slider;
@@ -18,6 +19,12 @@ public class Precise_Slider : MonoBehaviour
 
     // Internal Variables
     float currentValue = -1.0f;
+
+    public enum PreciseSliderType
+    {
+        normal,
+        audio
+    }
 
     private void OnEnable()
     {
@@ -61,6 +68,10 @@ public class Precise_Slider : MonoBehaviour
             currentValue = newValue;
             PlayerPrefs.SetFloat(key, newValue);
             Logger.Log(this, "Updated value: " + key + " to: " + newValue.ToString());
+            if (sliderType == PreciseSliderType.audio)
+            {
+                GameObject.Find("Scene Manager").GetComponent<Scene_Manager>().InitializeAudio();
+            }
         }
     }
 }

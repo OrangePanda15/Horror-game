@@ -26,13 +26,13 @@ public class Menu_Pause : MonoBehaviour
     public void OpenPauseMenu()
     {
         pauseMenu.SetActive(true);
-        Game_Manager.gameMode = Game_Manager.GameMode.ui;
+        Game_Manager.UpdateGameMode(Game_Manager.GameMode.ui);
     }
 
     public void ClosePauseMenu()
     {
         pauseMenu.SetActive(false);
-        Game_Manager.gameMode = Game_Manager.GameMode.normal;
+        Game_Manager.UpdateGameMode(Game_Manager.GameMode.normal);
     }
 
     public void OpenSettingsMenu()

@@ -4,29 +4,50 @@ using UnityEngine;
 
 public class Player_Interact : MonoBehaviour
 {
+    [Header("Exposed Variables")]
+    public float interactDistance;
+    public LayerMask interactionMask;
+
+    [Header("Component References")]
+    public Camera cam;
+
     // Internal variables
-    List<IInteractable> interactables = new List<IInteractable>();
+    GameObject currentObject;
+    IInteractable currentInteractable;
+    Outline interactableOutline;
+    bool canInteract;
 
     private void Update()
     {
-        if (interactables.Count > 0 && Input_Manager.Interact())
-        {
-            Logger.Log(this, "Interacted with: " + interactables[interactables.Count - 1].ToString());
-            interactables[interactables.Count - 1].Interact();
-        }
-    }
+        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+        RaycastHit hit;
+        canInteract = Physics.Raycast(ray.origin, ray.direction, out hit, interactDistance, interactionMask);
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!(other.GetComponentInParent<IInteractable>() is null))
+        try
         {
-            interactables.Add(other.GetComponentInParent<IInteractable>());
-            Logger.Log(this, "Added item: '" + other.GetComponentInParent<IInteractable>().GetType().ToString() + "' to list of interactables");
+            if (!canInteract || currentObject != hit.collider.gameObject)
+            {
+                interactableOutline.enabled = false;
+            }
         }
-    }
+        catch
+        {
 
-    private void OnTriggerExit(Collider other)
-    {
-        interactables.Remove(other.GetComponentInParent<IInteractable>());
+        }
+
+        if (canInteract)
+        {
+            currentObject = hit.collider.gameObject;
+            currentInteractable = currentObject.GetComponentInParent<IInteractable>();
+            interactableOutline = currentObject.GetComponentInParent<Outline>();
+
+            interactableOutline.enabled = true;
+
+            if (Input_Manager.Interact())
+            {
+                Logger.Log(this, "Interacted with: " + currentInteractable.ToString());
+                currentInteractable.Interact();
+            }
+        }
     }
 }

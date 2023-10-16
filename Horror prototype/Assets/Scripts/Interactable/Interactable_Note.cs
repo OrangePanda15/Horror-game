@@ -28,7 +28,7 @@ public class Interactable_Note : MonoBehaviour, IInteractable
     {
         Logger.Log(this, noteText);
         canvas.SetActive(true);
-        Game_Manager.gameMode = Game_Manager.GameMode.ui;
+        Game_Manager.UpdateGameMode(Game_Manager.GameMode.ui);
         audioSource.clip = Orange_Lib.GetRandomItemInArray(audioClipsActivate);
         audioSource.Play();
     }
@@ -37,7 +37,7 @@ public class Interactable_Note : MonoBehaviour, IInteractable
     {
         Logger.Log(this, "Note closed");
         canvas.SetActive(false);
-        Game_Manager.gameMode = Game_Manager.GameMode.normal;
+        Game_Manager.UpdateGameMode(Game_Manager.GameMode.normal);
         audioSource.clip = Orange_Lib.GetRandomItemInArray(audioClipsDeactivate);
         audioSource.Play();
     }

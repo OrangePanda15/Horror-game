@@ -46,11 +46,21 @@ public class Scene_Manager : MonoBehaviour
 
     public void InitializeScene()
     {
-        // Add sfx level controls here
+        InitializeAudio();
+        InitializeGameMode();
+    }
+
+    public void InitializeAudio()
+    {
         AudioSource[] audioSources = (AudioSource[])FindObjectsOfType(typeof(AudioSource));
         foreach (AudioSource source in audioSources)
         {
             source.volume = PlayerPrefs.GetFloat(source.tag);
         }
+    }
+
+    public void InitializeGameMode()
+    {
+        Game_Manager.UpdateGameMode(Game_Manager.GameMode.normal);
     }
 }

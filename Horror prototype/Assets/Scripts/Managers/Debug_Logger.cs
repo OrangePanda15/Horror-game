@@ -9,7 +9,7 @@ public static class Logger
             { "Interactable_Note", true },
             { "Interactable_Toggleable", true },
             { "Scene_Manager", true },
-            { "Player_Interact", false },
+            { "Player_Interact", true },
             { "Input_Manager", true },
             { "Precise_Slider", false },
             { "Menu_Pause", false },

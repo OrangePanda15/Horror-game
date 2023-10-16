@@ -20,4 +20,20 @@ public static class Game_Manager
         Audio_UI,
         Audio_SFX
     }
+
+    public static void UpdateGameMode(GameMode mode)
+    {
+        switch (mode)
+        {
+            case GameMode.normal:
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                break;
+
+            case GameMode.ui:
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                break;
+        }
+    }
 }
