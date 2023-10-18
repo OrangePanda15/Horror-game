@@ -342,6 +342,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2628976025821077861, guid: f221c55f7a7d10447853768b90715a3a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7418101221759878913, guid: f221c55f7a7d10447853768b90715a3a, type: 3}
       propertyPath: m_Name
       value: Scene Manager
@@ -396,7 +400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7773844445558854932, guid: f221c55f7a7d10447853768b90715a3a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f221c55f7a7d10447853768b90715a3a, type: 3}
