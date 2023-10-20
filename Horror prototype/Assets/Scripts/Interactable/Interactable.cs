@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IInteractable
 {
+    Outline outline { get; set; }
     void Interact();
 }

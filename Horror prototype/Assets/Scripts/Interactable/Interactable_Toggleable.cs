@@ -11,9 +11,15 @@ public class Interactable_Toggleable : MonoBehaviour, IInteractable
     [Header("Component References")]
     public Animator animator;
     public AudioSource audioSource;
+    public Outline outline { get; set; }
 
     // Internal Variables
     bool active;
+
+    private void Start()
+    {
+        outline = GetComponent<Outline>();
+    }
 
     public void Interact()
     {

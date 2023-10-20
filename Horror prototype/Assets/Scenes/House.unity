@@ -185,6 +185,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4799936948128516420, guid: e3acb5dc0d0a8114888fb71f4a8d45d5, type: 3}
   m_PrefabInstance: {fileID: 112775210}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &165379793
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 543450652549034773}
+    m_Modifications:
+    - target: {fileID: 8056807845067520264, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: noteText
+      value: Make sure to get milk and bread
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056807845067520266, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056807845067520266, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056807845067520266, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056807845067520266, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.24999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056807845067520266, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710784
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056807845067520266, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.70710576
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056807845067520266, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056807845067520266, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056807845067520266, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056807845067520266, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056807845067520266, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056807845067520269, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_Name
+      value: Note
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+--- !u!4 &165379794 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8056807845067520266, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+  m_PrefabInstance: {fileID: 165379793}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &174938407
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +388,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.48235294, g: 0.64705884, b: 1, a: 1}
-  m_Intensity: 0.48
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -331,7 +397,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0
     m_Bias: 0
     m_NormalBias: 0
     m_NearPlane: 0.2
@@ -461,10 +527,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 426639428529324812, guid: f1a42ba5ff188544f8d1f63730d3b886, type: 3}
-      propertyPath: interactDistance
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 4026998902508930426, guid: f1a42ba5ff188544f8d1f63730d3b886, type: 3}
       propertyPath: m_Name
       value: Player
@@ -721,6 +783,7 @@ Transform:
   - {fileID: 304327929}
   - {fileID: 1814521066}
   - {fileID: 112775211}
+  - {fileID: 165379794}
   m_Father: {fileID: 174938408}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -39,7 +39,7 @@ public class Player_Interact : MonoBehaviour
         {
             currentObject = hit.collider.gameObject;
             currentInteractable = currentObject.GetComponentInParent<IInteractable>();
-            interactableOutline = currentObject.GetComponentInParent<Outline>();
+            interactableOutline = currentInteractable.outline;
 
             interactableOutline.enabled = true;
 

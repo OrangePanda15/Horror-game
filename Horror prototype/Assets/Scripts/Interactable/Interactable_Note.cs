@@ -16,12 +16,15 @@ public class Interactable_Note : MonoBehaviour, IInteractable
     public GameObject canvas;
     public Text textUI;
     public AudioSource audioSource;
+    public Outline outline { get; set; }
 
     void Start()
     {
         text3d.text = noteText;
         textUI.text = noteText;
         canvas.SetActive(false);
+
+        outline = GetComponent<Outline>();
     }
 
     public void Interact()

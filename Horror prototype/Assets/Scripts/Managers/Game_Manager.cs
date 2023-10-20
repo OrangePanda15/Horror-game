@@ -25,6 +25,7 @@ public static class Game_Manager
 
     public static void UpdateGameMode(GameMode mode)
     {
+        gameMode = mode;
         switch (mode)
         {
             case GameMode.normal:
