@@ -395,7 +395,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1139409360298915599}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4798973187505274338}
+        m_TargetAssemblyTypeName: Menu_Pause, Assembly-CSharp
+        m_MethodName: ClosePauseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3256017754105314026
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2492241509318218540
 RectTransform:
   m_ObjectHideFlags: 0
@@ -902,7 +914,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2730713575284005479}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4798973187505274338}
+        m_TargetAssemblyTypeName: Menu_Pause, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6973239003884938608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,11 +1136,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6739288459477130272, guid: 76d864d2eb5f530439f75e5a60732fbd, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6739288459801769913, guid: 76d864d2eb5f530439f75e5a60732fbd, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7815231728564014366, guid: 76d864d2eb5f530439f75e5a60732fbd, type: 3}
       propertyPath: m_Pivot.x

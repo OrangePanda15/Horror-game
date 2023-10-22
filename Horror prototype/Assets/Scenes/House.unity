@@ -192,10 +192,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543450652549034773}
     m_Modifications:
-    - target: {fileID: 8056807845067520264, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
-      propertyPath: noteText
-      value: Make sure to get milk and bread
-      objectReference: {fileID: 0}
     - target: {fileID: 8056807845067520266, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -527,6 +523,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3604026191597696506, guid: f1a42ba5ff188544f8d1f63730d3b886, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604026191746162275, guid: f1a42ba5ff188544f8d1f63730d3b886, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4026998902508930426, guid: f1a42ba5ff188544f8d1f63730d3b886, type: 3}
       propertyPath: m_Name
       value: Player

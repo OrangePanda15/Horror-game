@@ -14,7 +14,7 @@ public static class Logger
             { "Player_Interact", true },
             { "Input_Manager", true },
             { "Precise_Slider", false },
-            { "Menu_Pause", false },
+            { "Menu_Pause", true },
             { "Player_Camera", false },
             { "Game_Manager", false },
         };

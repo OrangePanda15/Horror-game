@@ -8,6 +8,11 @@ public class Menu_Pause : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject settingsMenu;
 
+    private void Start()
+    {
+        pauseMenu.SetActive(false);
+    }
+
     private void Update()
     {
         if (Input_Manager.Pause())
@@ -39,5 +44,11 @@ public class Menu_Pause : MonoBehaviour
     {
         Logger.Log(this, "Opened settings in pause menu");
         settingsMenu.SetActive(true);
+    }
+
+    public void Quit()
+    {
+        Logger.Log(this, "Quit game");
+        Application.Quit();
     }
 }

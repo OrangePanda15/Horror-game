@@ -498,10 +498,10 @@ RectTransform:
   m_Father: {fileID: 8056807844863526290}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.1, y: 0.1}
-  m_AnchorMax: {x: 0.9, y: 0.9}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.1, y: 0}
+  m_AnchorMax: {x: 0.9, y: 1}
+  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_SizeDelta: {x: 0, y: -109}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8056807844028099465
 CanvasRenderer:
@@ -559,7 +559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8056807844863526290
 RectTransform:
   m_ObjectHideFlags: 0
@@ -674,8 +674,8 @@ RectTransform:
   m_Father: {fileID: 8056807844028099467}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.1, y: 0.1}
-  m_AnchorMax: {x: 0.9, y: 0.9}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -872,6 +872,7 @@ MonoBehaviour:
     A rubber room! A rubber room with rats,and rats make me crazy. Crazy? I was crazy
     once. They locked me in a room. A rubber room! A rubber room with rats,and rats
     make me crazy.
+  textUIpadding: 16
   audioClipsActivate:
   - {fileID: 8300000, guid: 53fe04b3eb5485f43ba719be61df4a25, type: 3}
   - {fileID: 8300000, guid: 314fecd01d8731a49b1c503e11d7342c, type: 3}
@@ -900,6 +901,7 @@ MonoBehaviour:
   text3d: {fileID: 8056807844968471293}
   canvas: {fileID: 8056807844863526293}
   textUI: {fileID: 8056807844958845489}
+  backgroundUI: {fileID: 8056807844028099464}
   audioSource: {fileID: 5403881908044781801}
 --- !u!114 &2908557416610801936
 MonoBehaviour:
