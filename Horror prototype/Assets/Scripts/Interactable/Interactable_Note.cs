@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class Interactable_Note : MonoBehaviour, IInteractable
 {
-    [Header("Variables")]
-    [TextArea] public string noteText;
+    [field: Header("Variables")]
+    [field: TextArea]
+    public string noteText;
     [Range(0.0f, 0.5f)] public float textPadding;
-    public float characterSize;
+    [Range(0.0f, 1.0f)] public float characterSize;
     public float modelScale;
     [Header("Asset References")]
     public Font font;
@@ -32,9 +33,14 @@ public class Interactable_Note : MonoBehaviour, IInteractable
         '\n'
     };
 
+    private void OnValidate()
+    {
+        Logger.Log(this, "Updated note");
+        InitializeNote();
+    }
+
     void Start()
     {
-        InitializeNote();
         canvas.SetActive(false);
         outline = GetComponent<Outline>();
     }
@@ -66,7 +72,7 @@ public class Interactable_Note : MonoBehaviour, IInteractable
         SetTextUIAnchors();
         ScaleModel();
         NormalizeTextSizes();
-        HandleTextWrapping();
+        //HandleTextWrapping();
     }
 
     public void SetTextUIAnchors()
@@ -116,6 +122,7 @@ public class Interactable_Note : MonoBehaviour, IInteractable
         for (int i = 0; i < words.Length && currentLineCount < maxLineCount; i++)
         {
             float wordWidth = 0.0f;
+            font.RequestCharactersInTexture(words[i], textUI.fontSize, textUI.fontStyle);
             CharacterInfo charInfo;
             foreach (char letter in words[i])
             {
@@ -125,7 +132,6 @@ public class Interactable_Note : MonoBehaviour, IInteractable
             }
             font.GetCharacterInfo(' ', out charInfo);
             wordWidth += charInfo.advance;
-            Logger.Log(this, wordWidth.ToString() + " " + words[i]);
 
             if (wordWidth + currentLineWidth < maxLineWidth)
             {
@@ -134,13 +140,13 @@ public class Interactable_Note : MonoBehaviour, IInteractable
             }
             else
             {
-                Logger.Log(this, currentLineWidth.ToString() + ": " + currentLine);
-                output += "\n" + currentLine;
+                output += currentLine + "\n";
                 currentLine = "";
                 currentLineWidth = wordWidth;
                 currentLineCount++;
             }
         }
+        output += currentLine;
 
         textUI.text = output;
         text3d.text = output;
