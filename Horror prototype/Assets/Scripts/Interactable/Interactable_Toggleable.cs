@@ -5,16 +5,15 @@ using UnityEngine;
 public class Interactable_Toggleable : MonoBehaviour, IInteractable
 {
     [field: Header("Exposed Variables")]
-    [field: SerializeField]
-    public Interactable.Interactables type { get; set; }
+    [field: SerializeField] public Interactable.Interactables type { get; set; }
 
     [Header("Asset References")]
-    public AudioClip[] audioClipsActivate;
-    public AudioClip[] audioClipsDeactivate;
+    [SerializeField] private AudioClip[] audioClipsActivate;
+    [SerializeField] private AudioClip[] audioClipsDeactivate;
 
     [Header("Component References")]
-    public Animator animator;
-    public AudioSource audioSource;
+    [SerializeField] private Animator animator;
+    [SerializeField] private AudioSource audioSource;
     public Outline outline { get; set; }
 
     // Internal Variables

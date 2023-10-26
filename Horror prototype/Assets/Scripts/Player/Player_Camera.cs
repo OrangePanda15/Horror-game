@@ -5,12 +5,12 @@ using UnityEngine;
 public class Player_Camera : MonoBehaviour
 {
     [Header("Variables")]
-    public float sensitivity;
+    [SerializeField] private float sensitivity;
     [Range(0.0f, 90.0f)] public float verticalRotationClamp = 85.0f;
 
     [Header("Component References")]
-    public Transform neck;
-    public Camera cam;
+    [SerializeField] private Transform neck;
+    [SerializeField] private Camera cam;
 
     // Internal variables
     Vector2 inputRotation;
@@ -23,7 +23,7 @@ public class Player_Camera : MonoBehaviour
 
     void Update()
     {
-        if (Game_Manager.gameMode == Game_Manager.GameMode.normal)
+        if (Game_Manager.GetCurrentGameMode() == Game_Manager.GameMode.normal)
         {
             inputRotation = Input_Manager.MouseDelta();
 

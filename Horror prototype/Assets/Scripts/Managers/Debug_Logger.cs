@@ -19,10 +19,34 @@ public static class Logger
             { "Game_Manager", false },
         };
 
+    public enum logType
+    {
+        normal,
+        warning,
+        error
+    }
+
     public static void Log<T>(T source, string str)
     {
-        if (logSources[source.GetType().Name.ToString()])
-            Debug.Log(source.GetType().Name.ToString() + ": " + str);
+        Log(source.GetType().Name.ToString(), str, logType.normal);
+    }
+
+    public static void Log<T>(T source, string str, logType type)
+    {
+        Log(source.GetType().Name.ToString(), str, type);
+    }
+
+    public static void Log(string source, string str, logType type)
+    {
+        if (logSources[source])
+        {
+            if (type == logType.error)
+                Debug.LogError(source.GetType().Name.ToString() + ": " + str);
+            else if (type == logType.warning)
+                Debug.LogWarning(source.GetType().Name.ToString() + ": " + str);
+            else if (type == logType.normal)
+                Debug.Log(source.GetType().Name.ToString() + ": " + str);
+        }
     }
 
     //public static void LogGraph<T>(T sourceType, string sourceName, float f)

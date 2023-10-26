@@ -202,11 +202,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 995066433120059104, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.7145621
+      value: 0.7200738
       objectReference: {fileID: 0}
     - target: {fileID: 995066433120059104, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.28543788
+      value: 0.2799262
       objectReference: {fileID: 0}
     - target: {fileID: 995066433120059104, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
       propertyPath: m_SizeDelta.x

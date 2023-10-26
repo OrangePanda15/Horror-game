@@ -5,8 +5,8 @@ using UnityEngine;
 public class Menu_Pause : MonoBehaviour
 {
     [Header("Component References")]
-    public GameObject pauseMenu;
-    public GameObject settingsMenu;
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject settingsMenu;
 
     private void Start()
     {

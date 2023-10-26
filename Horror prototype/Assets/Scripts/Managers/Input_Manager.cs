@@ -2947,7 +2947,11 @@ public class Input_Manager : MonoBehaviour
         // Refreshing things that need to be refreshed
         if (_key == keys.Input_Interact.ToString())
         {
-            FindObjectOfType<Player_Interact>().GetComponent<Player_Interact>().RefreshInteractPrompt();
+            try
+            {
+                FindObjectOfType<Player_Interact>().GetComponent<Player_Interact>().RefreshInteractPrompt();
+            }
+            catch { Logger.Log("Input_Manager", "No player object in scene", Logger.logType.error); }
         }
 
         string bindName = ((KeyCode)PlayerPrefs.GetInt(_key)).ToString();

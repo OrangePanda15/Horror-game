@@ -6,16 +6,16 @@ using UnityEngine.UI;
 public class Precise_Slider : MonoBehaviour
 {
     [Header("Exposed Variables")]
-    public string key;
-    public string text;
-    public float minValue;
-    public float maxValue;
-    public PreciseSliderType sliderType;
+    [SerializeField] private string key;
+    [SerializeField] private string text;
+    [SerializeField] private float minValue;
+    [SerializeField] private float maxValue;
+    [SerializeField] private PreciseSliderType sliderType;
 
     [Header("Component References")]
-    public Slider slider;
-    public InputField field;
-    public Text textUI;
+    [SerializeField] private Slider slider;
+    [SerializeField] private InputField field;
+    [SerializeField] private Text textUI;
 
     // Internal Variables
     float currentValue = -1.0f;

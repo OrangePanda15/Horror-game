@@ -6,17 +6,16 @@ using UnityEngine.UI;
 public class Player_Interact : MonoBehaviour
 {
     [Header("Exposed Variables")]
-    public float interactDistance;
-    public LayerMask interactionMask;
+    [SerializeField] private float interactDistance;
+    [SerializeField] private LayerMask interactionMask;
 
     [Header("Asset References")]
-    [SerializeField]
-    public Interactable_Info[] interactableInfo;
+    [SerializeField] private Interactable_Info[] interactableInfo;
 
     [Header("Component References")]
-    public Camera cam;
-    public GameObject interactPrompt;
-    public Text interactPromptInputText;
+    [SerializeField] private Camera cam;
+    [SerializeField] private GameObject interactPrompt;
+    [SerializeField] private Text interactPromptInputText;
 
     // Internal variables
     GameObject currentObject;
@@ -32,7 +31,7 @@ public class Player_Interact : MonoBehaviour
 
     private void Update()
     {
-        if (Game_Manager.gameMode == Game_Manager.GameMode.normal)
+        if (Game_Manager.GetCurrentGameMode() == Game_Manager.GameMode.normal)
         {
             Ray ray = new Ray(cam.transform.position, cam.transform.forward);
             RaycastHit hit;

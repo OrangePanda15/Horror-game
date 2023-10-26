@@ -5,7 +5,7 @@ using UnityEngine;
 public class Menu_Settings : MonoBehaviour
 {
     [Header("Component References")]
-    public GameObject[] tabs;
+    [SerializeField] private GameObject[] tabs;
 
     // Internal Variables
     int currentTab = 0;

@@ -6,26 +6,24 @@ using UnityEngine.UI;
 public class Interactable_Note : MonoBehaviour, IInteractable
 {
     [field: Header("Exposed Variables")]
-    [field: SerializeField]
-    public Interactable.Interactables type { get; set; }
-    [field: TextArea]
-    public string noteText;
-    [Range(0.0f, 0.5f)] public float textPadding;
-    [Range(0.0f, 1.0f)] public float characterSize;
-    public float modelScale;
+    [field: SerializeField] public Interactable.Interactables type { get; set; }
+    [SerializeField] [TextArea] private string noteText;
+    [SerializeField] [Range(0.0f, 0.5f)] private float textPadding;
+    [SerializeField] [Range(0.0f, 1.0f)] private float characterSize;
+    [SerializeField] private float modelScale;
     [Header("Asset References")]
-    public Font font;
-    public AudioClip[] audioClipsActivate;
-    public AudioClip[] audioClipsDeactivate;
+    [SerializeField] private Font font;
+    [SerializeField] private AudioClip[] audioClipsActivate;
+    [SerializeField] private AudioClip[] audioClipsDeactivate;
 
     [Header("Component References")]
-    public TextMesh text3d;
-    public GameObject model;
-    public GameObject canvas;
-    public RectTransform textUIContainer;
-    public Text textUI;
-    public Image backgroundUI;
-    public AudioSource audioSource;
+    [SerializeField] private TextMesh text3d;
+    [SerializeField] private GameObject model;
+    [SerializeField] private GameObject canvas;
+    [SerializeField] private RectTransform textUIContainer;
+    [SerializeField] private Text textUI;
+    [SerializeField] private Image backgroundUI;
+    [SerializeField] private AudioSource audioSource;
     public Outline outline { get; set; }
 
     // Internal Variables

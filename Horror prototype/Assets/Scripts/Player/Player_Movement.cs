@@ -5,12 +5,12 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour
 {
     [Header("Variables")]
-    public float speedWalk;
-    public float speedRun;
+    [SerializeField] private float speedWalk;
+    [SerializeField] private float speedRun;
 
     [Header("Component References")]
-    public Rigidbody rb;
-    public Transform neck;
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private Transform neck;
 
     // Internal variables
     Vector2 inputMovement;
@@ -24,7 +24,7 @@ public class Player_Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Game_Manager.gameMode == Game_Manager.GameMode.normal)
+        if (Game_Manager.GetCurrentGameMode() == Game_Manager.GameMode.normal)
         {
             momentum = neck.transform.forward * inputMovement.y + neck.transform.right * inputMovement.x;
             momentum *= inputRun ? speedRun : speedWalk;

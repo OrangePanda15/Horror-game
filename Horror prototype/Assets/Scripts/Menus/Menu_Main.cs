@@ -5,7 +5,7 @@ using UnityEngine;
 public class Menu_Main : MonoBehaviour
 {
     [Header("Component References")]
-    public GameObject settingsMenu;
+    [SerializeField] private GameObject settingsMenu;
 
     public void OpenSettingsMenu()
     {

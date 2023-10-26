@@ -9,8 +9,8 @@ using UnityEngine.UI;
 public class Scene_Manager : MonoBehaviour
 {
     [Header("Component References")]
-    public GameObject loadingScreen;
-    public Slider loadingBar;
+    [SerializeField] private GameObject loadingScreen;
+    [SerializeField] private Slider loadingBar;
 
     private void OnEnable()
     {
