@@ -1359,6 +1359,7 @@ public class Input_Manager : MonoBehaviour
     {
         string _key = keybind.key.ToString();
 
+        // Checking what the key the action should be bound to
         if (Input.anyKey)
         {
             if (Input.GetKey(KeyCode.Backspace))
@@ -2943,7 +2944,18 @@ public class Input_Manager : MonoBehaviour
             }
         }
 
+        // Refreshing things that need to be refreshed
+        if (_key == keys.Input_Interact.ToString())
+        {
+            FindObjectOfType<Player_Interact>().GetComponent<Player_Interact>().RefreshInteractPrompt();
+        }
+
         string bindName = ((KeyCode)PlayerPrefs.GetInt(_key)).ToString();
         keybind.buttonText.text = bindName;
+    }
+
+    public static KeyCode findInputByAction(keys _key)
+    {
+        return (KeyCode)PlayerPrefs.GetInt(_key.ToString());
     }
 }

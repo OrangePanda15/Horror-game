@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Interactable_Toggleable : MonoBehaviour, IInteractable
 {
+    [field: Header("Exposed Variables")]
+    [field: SerializeField]
+    public Interactable.Interactables type { get; set; }
+
     [Header("Asset References")]
     public AudioClip[] audioClipsActivate;
     public AudioClip[] audioClipsDeactivate;

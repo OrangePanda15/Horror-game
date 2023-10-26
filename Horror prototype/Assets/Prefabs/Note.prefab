@@ -960,6 +960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac0ccaf57eb1244fa344686ccf896c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <type>k__BackingField: 0
   noteText: Crazy? I was crazy once. They locked me in a room. A rubber room! A rubber
     room with rats,and rats make me crazy. Crazy? I was crazy once. They locked me
     in a room. A rubber room! A rubber room with rats,and rats make me crazy. Crazy?

@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class Interactable_Note : MonoBehaviour, IInteractable
 {
-    [field: Header("Variables")]
+    [field: Header("Exposed Variables")]
+    [field: SerializeField]
+    public Interactable.Interactables type { get; set; }
     [field: TextArea]
     public string noteText;
     [Range(0.0f, 0.5f)] public float textPadding;

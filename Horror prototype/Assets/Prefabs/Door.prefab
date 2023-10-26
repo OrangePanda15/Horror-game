@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64ed6c9fe1406c49b2c6e6a87bc444d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <type>k__BackingField: 1
   audioClipsActivate:
   - {fileID: 8300000, guid: 22c9ce86e9695c4498debcaf005dad0b, type: 3}
   - {fileID: 8300000, guid: 937158eadc244094ca742aa1f8ba6c0b, type: 3}
