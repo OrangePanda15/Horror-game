@@ -17,7 +17,7 @@ public class Menu_Pause : MonoBehaviour
     {
         if (Input_Manager.Pause())
         {
-            if (!pauseMenu.activeSelf)
+            if (!pauseMenu.activeSelf && !Game_Manager.UIInUse())
             {
                 OpenPauseMenu();
             }
@@ -32,12 +32,14 @@ public class Menu_Pause : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         Game_Manager.UpdateGameMode(Game_Manager.GameMode.ui);
+        Game_Manager.SetUIUsage(true);
     }
 
     public void ClosePauseMenu()
     {
         pauseMenu.SetActive(false);
         Game_Manager.UpdateGameMode(Game_Manager.GameMode.normal);
+        Game_Manager.SetUIUsage(false);
     }
 
     public void OpenSettingsMenu()

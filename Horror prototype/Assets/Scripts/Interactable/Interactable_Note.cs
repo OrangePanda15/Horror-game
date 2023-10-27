@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Interactable_Note : MonoBehaviour, IInteractable
 {
@@ -9,24 +10,24 @@ public class Interactable_Note : MonoBehaviour, IInteractable
     [field: SerializeField] public Interactable.Interactables type { get; set; }
     [SerializeField] [TextArea] private string noteText;
     [SerializeField] [Range(0.0f, 0.5f)] private float textPadding;
-    [SerializeField] [Range(0.0f, 1.0f)] private float characterSize;
     [SerializeField] private float modelScale;
     [Header("Asset References")]
-    [SerializeField] private Font font;
+    [SerializeField] private Sprite background;
     [SerializeField] private AudioClip[] audioClipsActivate;
     [SerializeField] private AudioClip[] audioClipsDeactivate;
 
     [Header("Component References")]
-    [SerializeField] private TextMesh text3d;
+    [SerializeField] private TextMeshPro textTMP3D;
+    [SerializeField] private TextMeshProUGUI textTMPUI;
     [SerializeField] private GameObject model;
     [SerializeField] private GameObject canvas;
     [SerializeField] private RectTransform textUIContainer;
-    [SerializeField] private Text textUI;
     [SerializeField] private Image backgroundUI;
     [SerializeField] private AudioSource audioSource;
     public Outline outline { get; set; }
 
     // Internal Variables
+    bool noteOpen = false;
     char[] validLinebreakCharacters = new char[]
     {
         ' ',
@@ -43,39 +44,53 @@ public class Interactable_Note : MonoBehaviour, IInteractable
     {
         canvas.SetActive(false);
         outline = GetComponent<Outline>();
+        InitializeNote();
+    }
+
+    void Update()
+    {
+        if (Input_Manager.Pause() && noteOpen)
+        {
+            Close();
+        }
     }
 
     public void Interact()
     {
-        Logger.Log(this, noteText);
-        canvas.SetActive(true);
-        Game_Manager.UpdateGameMode(Game_Manager.GameMode.ui);
-        audioSource.clip = Orange_Lib.GetRandomItemInArray(audioClipsActivate);
-        audioSource.Play();
+        if (!Game_Manager.UIInUse())
+        {
+            noteOpen = true;
+
+            Logger.Log(this, noteText);
+            canvas.SetActive(true);
+            Game_Manager.UpdateGameMode(Game_Manager.GameMode.ui);
+            audioSource.clip = Orange_Lib.GetRandomItemInArray(audioClipsActivate);
+            audioSource.Play();
+            Game_Manager.SetUIUsage(true);
+        }
     }
 
     public void Close()
     {
+        noteOpen = false;
+
         Logger.Log(this, "Note closed");
         canvas.SetActive(false);
         Game_Manager.UpdateGameMode(Game_Manager.GameMode.normal);
         audioSource.clip = Orange_Lib.GetRandomItemInArray(audioClipsDeactivate);
         audioSource.Play();
+        Game_Manager.SetUIUsage(false);
     }
 
     public void InitializeNote()
     {
-        text3d.text = noteText;
-        textUI.text = noteText;
-        text3d.font = font;
-        textUI.font = font;
+        backgroundUI.sprite = background;
         SetTextUIAnchors();
         ScaleModel();
-        NormalizeTextSizes();
-        //HandleTextWrapping();
+        AssignText(noteText);
     }
 
-    public void SetTextUIAnchors()
+    void SetTextUIAnchors()
     {
         float backgroundAspect = backgroundUI.rectTransform.rect.width / backgroundUI.rectTransform.rect.height;
         float imageAspect = backgroundUI.sprite.rect.width / backgroundUI.sprite.rect.height;
@@ -88,67 +103,26 @@ public class Interactable_Note : MonoBehaviour, IInteractable
         textUIContainer.offsetMin = Vector2.zero;
         textUIContainer.offsetMax = Vector2.zero;
 
-        textUI.rectTransform.anchorMin = new Vector2(textPadding, textPadding);
-        textUI.rectTransform.anchorMax = Vector2.one - new Vector2(textPadding, textPadding);
         textUIContainer.offsetMin = Vector2.zero;
         textUIContainer.offsetMax = Vector2.zero;
+
+        textTMPUI.rectTransform.anchorMin = new Vector2(textPadding, 2.0f * textPadding);
+        textTMPUI.rectTransform.anchorMax = new Vector2(1.0f - textPadding, 1.0f - textPadding);
     }   
     
-    public void ScaleModel()
+    void ScaleModel()
     {
         Vector3 dimensions = modelScale * new Vector2(backgroundUI.sprite.rect.width / backgroundUI.sprite.rect.height, 1.0f);
         model.transform.localScale = new Vector3(dimensions.x, 1.0f, dimensions.y);
-        text3d.transform.localPosition = 5.0f * new Vector3(dimensions.x, dimensions.y, 0.0f);
-        text3d.transform.localPosition *= 1.0f - (2.0f * textPadding);
+        textTMP3D.rectTransform.sizeDelta = 10.0f * dimensions;
+        textTMP3D.rectTransform.sizeDelta -= 0.5f * new Vector2(textPadding, textPadding);
+        textTMP3D.rectTransform.sizeDelta *= 25.0f;
+        textTMP3D.fontSize = 10.0f * dimensions.y;
     }
 
-    public void NormalizeTextSizes()
+    void AssignText(string text)
     {
-        text3d.characterSize = characterSize * 4.0f * model.transform.localScale.z;
-        textUI.fontSize = Mathf.RoundToInt(characterSize * backgroundUI.rectTransform.rect.height);
-    }
-
-    public void HandleTextWrapping()
-    {
-        float fontSizeRatio = textUI.fontSize / font.fontSize;
-        string[] words = noteText.Split(validLinebreakCharacters, System.StringSplitOptions.RemoveEmptyEntries);
-
-        string output = "";
-        int maxLineCount = Mathf.FloorToInt((1.0f - (2.0f * textPadding)) / characterSize);
-        int currentLineCount = 0;
-        string currentLine = "";
-        float maxLineWidth = textUI.rectTransform.rect.width;
-        float currentLineWidth = 0.0f;
-        for (int i = 0; i < words.Length && currentLineCount < maxLineCount; i++)
-        {
-            float wordWidth = 0.0f;
-            font.RequestCharactersInTexture(words[i], textUI.fontSize, textUI.fontStyle);
-            CharacterInfo charInfo;
-            foreach (char letter in words[i])
-            {
-                font.GetCharacterInfo(letter, out charInfo);
-                float letterWidth = charInfo.advance * fontSizeRatio;
-                wordWidth += letterWidth;
-            }
-            font.GetCharacterInfo(' ', out charInfo);
-            wordWidth += charInfo.advance;
-
-            if (wordWidth + currentLineWidth < maxLineWidth)
-            {
-                currentLine += words[i] + " ";
-                currentLineWidth += wordWidth;
-            }
-            else
-            {
-                output += currentLine + "\n";
-                currentLine = "";
-                currentLineWidth = wordWidth;
-                currentLineCount++;
-            }
-        }
-        output += currentLine;
-
-        textUI.text = output;
-        text3d.text = output;
+        textTMP3D.text = text;
+        textTMPUI.text = text;
     }
 }

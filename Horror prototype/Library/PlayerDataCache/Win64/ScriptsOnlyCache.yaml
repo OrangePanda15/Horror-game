@@ -21,6 +21,8 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshPro
+    - TMPro.TextMeshProUGUI
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -79,8 +81,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
-    - Class: 102
-      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
@@ -102,11 +102,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1656}
     - Class: 114
+      Script: {instanceID: 1732}
+    - Class: 114
       Script: {instanceID: 1838}
     - Class: 114
       Script: {instanceID: 2266}
     - Class: 114
       Script: {instanceID: 2366}
+    - Class: 114
+      Script: {instanceID: 2404}
     - Class: 114
       Script: {instanceID: 2510}
     - Class: 114
@@ -115,6 +119,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 2622}
     - Class: 114
       Script: {instanceID: 2768}
+    - Class: 114
+      Script: {instanceID: 3120}
     - Class: 114
       Script: {instanceID: 3162}
     - Class: 114
@@ -257,8 +263,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
-    - Class: 102
-      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
@@ -280,11 +284,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1656}
     - Class: 114
+      Script: {instanceID: 1732}
+    - Class: 114
       Script: {instanceID: 1838}
     - Class: 114
       Script: {instanceID: 2266}
     - Class: 114
       Script: {instanceID: 2366}
+    - Class: 114
+      Script: {instanceID: 2404}
     - Class: 114
       Script: {instanceID: 2510}
     - Class: 114
@@ -293,6 +301,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 2622}
     - Class: 114
       Script: {instanceID: 2768}
+    - Class: 114
+      Script: {instanceID: 3120}
     - Class: 114
       Script: {instanceID: 3162}
     - Class: 114
@@ -670,7 +680,7 @@ ScriptsOnlyBuild:
     className: PositionAsUV1
   - hash:
       serializedVersion: 2
-      Hash: eff2fb3a5340d90f7cc9d7208e86e605
+      Hash: 9dbf000ac0a11fb2b2e3362caaf5d28d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Interactable_Note
@@ -847,5 +857,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Main_Menu.unity
   - Assets/Scenes/Test_Scene.unity
   - Assets/Scenes/House.unity
-  playerPath: D:/Game projects/Horror game/Horror-game/Builds/Alpha 0.1.3/Horror
+  playerPath: D:/Game projects/Horror game/Horror-game/Builds/Alpha 0.1.5/Horror
     prototype.exe

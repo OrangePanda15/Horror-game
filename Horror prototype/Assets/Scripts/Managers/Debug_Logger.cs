@@ -41,11 +41,11 @@ public static class Logger
         if (logSources[source])
         {
             if (type == logType.error)
-                Debug.LogError(source.GetType().Name.ToString() + ": " + str);
+                Debug.LogError(source.ToString() + ": " + str);
             else if (type == logType.warning)
-                Debug.LogWarning(source.GetType().Name.ToString() + ": " + str);
+                Debug.LogWarning(source.ToString() + ": " + str);
             else if (type == logType.normal)
-                Debug.Log(source.GetType().Name.ToString() + ": " + str);
+                Debug.Log(source.ToString() + ": " + str);
         }
     }
 

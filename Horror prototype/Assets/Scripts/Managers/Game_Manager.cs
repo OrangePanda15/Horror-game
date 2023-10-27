@@ -8,6 +8,7 @@ public static class Game_Manager
 {
     // Exposed variables
     private static GameMode gameMode = GameMode.normal;
+    private static bool UIOpen = false;
     public static Scene_Manager sceneManager = default(Scene_Manager);
 
     public enum GameMode
@@ -43,5 +44,15 @@ public static class Game_Manager
     public static GameMode GetCurrentGameMode()
     {
         return gameMode;
+    }
+
+    public static void SetUIUsage(bool state)
+    {
+        UIOpen = state;
+    }
+
+    public static bool UIInUse()
+    {
+        return UIOpen;
     }
 }

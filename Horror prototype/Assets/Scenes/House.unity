@@ -200,13 +200,53 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.141075
       objectReference: {fileID: 0}
+    - target: {fileID: 215425052693107437, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0047500003
+      objectReference: {fileID: 0}
+    - target: {fileID: 756797420721572228, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.975
+      objectReference: {fileID: 0}
+    - target: {fileID: 756797420721572228, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.975
+      objectReference: {fileID: 0}
+    - target: {fileID: 756797420721572228, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 756797420721572228, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 756797420721572228, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 756797420721572228, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 756797420721572228, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 756797420721572228, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 756797420721572228, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 995066433120059104, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.7200738
+      value: 0.70979434
       objectReference: {fileID: 0}
     - target: {fileID: 995066433120059104, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.2799262
+      value: 0.29020566
       objectReference: {fileID: 0}
     - target: {fileID: 995066433120059104, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
       propertyPath: m_SizeDelta.x
@@ -216,6 +256,23 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1198507473611279940, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_text
+      value: Whether we wanted it or not, we've stepped into a war with the Cabal
+        on Mars. So let's get to taking out their command, one by one. Valus Ta'aurc.
+        From what I can gather he commands the Siege Dancers from an Imperial Land
+        Tank outside of Rubicon. He's well protected, but with the right team, we
+        can punch through those defenses, take this beast out, and break their grip
+        on Freehold.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198507473611279940, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_fontSize
+      value: 3.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1509601899525933923, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 1509601899525933923, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
       propertyPath: m_Text
       value: 'Getting this
@@ -238,6 +295,18 @@ PrefabInstance:
       propertyPath: m_CharacterSize
       value: 0.01188
       objectReference: {fileID: 0}
+    - target: {fileID: 1833123577437246940, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303696198391138362, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 4.9375
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303696198391138362, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 7.1125
+      objectReference: {fileID: 0}
     - target: {fileID: 6785814728378272106, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.021
@@ -245,6 +314,51 @@ PrefabInstance:
     - target: {fileID: 6785814728378272106, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.0297
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060798056164953470, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_text
+      value: Whether we wanted it or not, we've stepped into a war with the Cabal
+        on Mars. So let's get to taking out their command, one by one. Valus Ta'aurc.
+        From what I can gather he commands the Siege Dancers from an Imperial Land
+        Tank outside of Rubicon. He's well protected, but with the right team, we
+        can punch through those defenses, take this beast out, and break their grip
+        on Freehold.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060798056164953470, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060798056164953470, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_fontSize
+      value: 23.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060798056164953470, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_isRichText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060798056164953470, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 35.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060798056164953470, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060798056164953470, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060798056164953470, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_parseCtrlCharacters
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060798056164953470, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_useMaxVisibleDescender
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056807844863526289, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8056807844958845488, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
       propertyPath: m_AnchorMax.x
@@ -285,30 +399,33 @@ PrefabInstance:
         so :)'
       objectReference: {fileID: 0}
     - target: {fileID: 8056807844958845489, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 8056807844958845489, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
       propertyPath: m_FontData.m_MaxSize
-      value: 44
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 8056807844958845489, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 44
+      value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 8056807844968471290, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    - target: {fileID: 8056807845067520264, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+      propertyPath: textTMP
+      value: 
+      objectReference: {fileID: 1306719478}
     - target: {fileID: 8056807845067520264, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
       propertyPath: noteText
-      value: 'Getting this
-
-        working was a
-
-        massive pain
-
-        in
-        the ass
-
-
-        Anyway it''s
-
-        working now
-
-        so :)'
+      value: Whether we wanted it or not, we've stepped into a war with the Cabal
+        on Mars. So let's get to taking out their command, one by one. Valus Ta'aurc.
+        From what I can gather he commands the Siege Dancers from an Imperial Land
+        Tank outside of Rubicon. He's well protected, but with the right team, we
+        can punch through those defenses, take this beast out, and break their grip
+        on Freehold.
       objectReference: {fileID: 0}
     - target: {fileID: 8056807845067520264, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
       propertyPath: _noteText
@@ -567,6 +684,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1306719478 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1198507473611279940, guid: 467c57e64a3d34342b9b12d1453feeb4, type: 3}
+  m_PrefabInstance: {fileID: 165379793}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1414669743
 PrefabInstance:
   m_ObjectHideFlags: 0
